@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#abc {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 20px;
+  background-color: beige;
+  color: purple;
+  width: 100%;
+}
+
+#container {
+  width: 80%;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+#invoer {
+  background-color:	#e6e3e8;
+
+  font-size: 25px;
+  padding: 12px 20px 12px 40px;
+  border: 5px solid #ddd;
+  margin-bottom: 12px;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td {
+  border: 5px solid black;
+  text-align: left;
+  padding: 10px;
+}
+</style>
+</head>
+<body id="abc">
+  <div id="container">
+  <button type="button" onclick="textSize()">AaBbCc</button>
+
+<h2>CONTACTEN</h2><br>
+
+<input type="text" id="invoer" onkeyup="opZoek()" placeholder="Zoek op naam ..."><br><br>
+
+
+<table id="deTafel">
+  <tr onclick="bewerken()">
+    <td>Jan de Groot</td>
+    <td>Kleinplein 123</td>
+    <td>Klijndijk</td>
+    <td>03456789</td>
+  </tr>
+  <tr onclick="bewerken()">
+    <td>Piet Appel</td>
+    <td>Boomstraat 3</td>
+    <td>Amsterdam</td>
+    <td>01234567</td>
+  </tr>
+  <tr onclick="bewerken()">
+    <td>Els Derksen</td>
+    <td>Kalverstraat 19</td>
+    <td>Arnhem</td>
+    <td>02345678</td>
+  </tr>
+  <tr onclick="bewerken()">
+    <td>Olivia Water</td>
+    <td>Meerkamp 61</td>
+    <td>Almere</td>
+    <td>06789123</td>
+  </tr>
+  <tr onclick="bewerken()">
+    <td>Klaas Morgen</td>
+    <td>Gisterweg 25</td>
+    <td>Domburg</td>
+    <td>04567891</td>
+  </tr>
+  <tr onclick="bewerken()">
+    <td>Truus Tent</td>
+    <td>Kampeerveld 43</td>
+    <td>Groesbeek</td>
+    <td>05678912</td>
+  </tr>
+  <tr onclick="bewerken()">
+    <td>Sandra Simpel</td>
+    <td>Boeien 35</td>
+    <td>Saaidorp</td>
+    <td>07891234</td>
+  </tr>
+</table>
+</div>
+<script>
+//style veranderen
+function textSize() {
+  var x = document.querySelector("#abc");
+    if (x.style.fontSize === "35px") {
+        x.style.fontSize = "20px";
+        x.style.backgroundColor = "beige";
+        x.style.color = "purple"
+    } else {
+        x.style.fontSize = "35px";
+        x.style.backgroundColor = "purple";
+        x.style.color = "beige";
+    }
+};
+//zoeken op naam
+function opZoek() {
+  var invoer, filter, table, tr, td, i;
+    invoer = document.getElementById("invoer");
+    filter = invoer.value.toUpperCase();
+    tafel = document.getElementById("deTafel");
+    tr = tafel.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+  if (td) {
+    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
+};
+
+function bewerken() {
+alert("test bewerken");
+}
+</script>
+
+</body>
+</html>
+<!--
+  for (var i = 0; i < sizeEls.length; i++) {
+    sizeEls[i].style.fontSize = "50px";
+}-->
