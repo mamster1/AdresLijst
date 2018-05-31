@@ -59,8 +59,8 @@ td {
 
 
 <table id="deTafel">
-  <tr onclick="bewerken()">
-    <td>Jan de Groot</td>
+  <tr>
+    <td onclick="bewerken(this)">Jan de Groot</td>
     <td>Kleinplein 123</td>
     <td>Klijndijk</td>
     <td>03456789</td>
@@ -80,7 +80,7 @@ td {
     <td>02345678</td>
     <td><input type="button" value="verwijderen" onclick="gegevensWeg(this)"></td>
   </tr>
-  <tr onclick="bewerken()">
+  <tr>
     <td>Olivia Water</td>
     <td>Meerkamp 61</td>
     <td>Almere</td>
@@ -149,7 +149,7 @@ function gegevensWeg(rij) {
 }
 
 function bewerken() {
-alert("test bewerken");
+prompt("test bewerken");
 }
 </script>
 
